@@ -8,10 +8,10 @@ export const Appbar = () => {
 
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-20 border-b border-gray-800  backdrop-blur-md flex items-center justify-between p-4 bg-white md:px-16">
+    <nav className="fixed top-0 left-0 right-0 z-20 border-b border-orange-800  backdrop-blur-md flex items-center justify-between p-4 bg-orange-100 md:px-16">
       <div>
         
-        <div className="font-bold black">
+        <div className="font-bold black text-xl">
       Jalshakthi
         </div>
       
