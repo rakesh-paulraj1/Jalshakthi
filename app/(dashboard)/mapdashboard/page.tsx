@@ -53,7 +53,7 @@ const MapDashboard: React.FC = () => {
         </Link>
       </div>
   
-      {/* Doughnut Chart */}
+    
       <div className="flex-grow flex items-center justify-center">
         <div className="w-full h-full max-w-lg">
           <DoughnutChart />
