@@ -11,7 +11,7 @@ export default function Layout({
   }): JSX.Element {
   return (
     <div className="min-h-screen flex flex-col">
-      <Appbar/>
+   <Appbar/>
       <main className="flex-grow mt-16">
         {children}
       </main>

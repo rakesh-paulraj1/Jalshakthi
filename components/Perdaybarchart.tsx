@@ -1,76 +1,68 @@
 "use client"
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
-import { Bar } from "react-chartjs-2";
+import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
- const Data = [
-    {
-      id: 1,
-      year: 2016,
-      userGain: 80000,
-      userLost: 823
-    },
-    {
-      id: 2,
-      year: 2017,
-      userGain: 45677,
-      userLost: 345
-    },
-    {
-      id: 3,
-      year: 2018,
-      userGain: 78888,
-      userLost: 555
-    },
-    {
-      id: 4,
-      year: 2019,
-      userGain: 90000,
-      userLost: 4555
-    },
-    {
-      id: 5,
-      year: 2020,
-      userGain: 4300,
-      userLost: 234
-    }
-  ];
+const data = [
+  {
+      "antibody": "Temperature",
+      "data": 53.00
+  },
+  {
+      "antibody": "Dissolved O2",
+      "data": 66.50
+  },
+  {
+      "antibody": "pH",
+      "data": 55.71
+  },
+  {
+      "antibody": "Conductivity",
+      "data": 58.00
+  },
+  {
+      "antibody": "BOD",
+      "data": 25.00
+  },
+  {
+      "antibody": "NitrateN",
+      "data": 66.80
+  },
+  {
+      "antibody": "Fecal colliform",
+      "data": 34.00
+  },
+  {
+      "antibody": "Total colliform",
+      "data": 45.65
+  },
+  {
+      "antibody": "Fecal streptococci",
+      "data": 34.00
+  }
+]
+;
 
-  export const BarChart = () => {
-    const chartData = {
-      labels: Data.map(item => item.year),
-      datasets: [
-        {
-          label: 'User Gain',
-          data: Data.map(item => item.userGain),
-          backgroundColor: 'rgba(75, 192, 192, 0.6)',
-        },
-        {
-          label: 'User Lost',
-          data: Data.map(item => item.userLost),
-          backgroundColor: 'rgba(255, 99, 132, 0.6)',
-        },
-      ],
-    };
-
-    return (
-      <div className="chart-container">
-        <h2 style={{ textAlign: "center" }}>Bar Chart</h2>
-        <Bar
-          data={chartData}
-          options={{
-            plugins: {
-              title: {
-                display: true,
-                text: "Users Gained between 2016-2020"
-              },
-              legend: {
-                display: true
-              }
-            }
-          }}
-        />
-      </div>
-    );
-  };
-  export default BarChart;
+export default function Perdaybarchart() {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart
+        width={300}
+        height={500}
+        data={data}
+        margin={{
+          top: 30,
+          right: 40,
+          left: 40,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="antibody" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+     
+        <Bar dataKey="data" fill="#82ca9d" />
+      </BarChart>
+    </ResponsiveContainer>
+  );
+}
